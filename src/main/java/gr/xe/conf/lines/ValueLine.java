@@ -15,7 +15,6 @@
  */
 package gr.xe.conf.lines;
 
-import gr.xe.conf.LineReader;
 import gr.xe.conf.tree.ConfNode;
 import gr.xe.conf.tree.ValueNode;
 

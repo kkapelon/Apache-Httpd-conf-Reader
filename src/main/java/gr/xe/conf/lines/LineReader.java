@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package gr.xe.conf;
+package gr.xe.conf.lines;
 
 import gr.xe.conf.tree.ConfNode;
 

@@ -16,6 +16,7 @@
 package gr.xe.conf;
 
 import gr.xe.conf.lines.CommentLine;
+import gr.xe.conf.lines.LineReader;
 import gr.xe.conf.lines.PathLine;
 import gr.xe.conf.lines.ValueLine;
 import gr.xe.conf.tree.ConfNode;
