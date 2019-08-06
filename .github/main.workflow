@@ -5,5 +5,5 @@ workflow "Run Maven" {
 
 action "Run maven" {
   uses = "docker://maven:3.6.1-jdk-8"
-  runs = "pwd"
+  runs = "pwd && ls -l && mvn --version"
 }
