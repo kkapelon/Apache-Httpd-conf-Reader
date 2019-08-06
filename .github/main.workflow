@@ -1,6 +1,6 @@
 workflow "Run Maven" {
   on = "push"
-  resolves = ["List files"]
+  resolves = ["Re-download same image"]
 }
 
 action "Run maven" {
@@ -12,4 +12,10 @@ action "List files" {
   uses = "docker://alpine:3.8"
   needs = ["Run maven"]
   runs = "ls -l "
+}
+
+action "Re-download same image" {
+  uses = "docker://alpine:3.8"
+  needs = ["List files"]
+  runs = "pwd"
 }
