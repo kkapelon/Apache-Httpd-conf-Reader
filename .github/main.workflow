@@ -1,21 +1,17 @@
-workflow "Run Maven" {
-  on = "push"
-  resolves = ["Re-download same image"]
-}
+name: Java CI
 
-action "Run maven" {
-  uses = "docker://maven:3.6.1-jdk-8"
-  runs = "mvn package"
-}
+on: [push]
 
-action "List files" {
-  uses = "docker://alpine:3.8"
-  needs = ["Run maven"]
-  runs = "ls -l "
-}
+jobs:
+  build:
 
-action "Re-download same image" {
-  uses = "docker://alpine:3.8"
-  needs = ["List files"]
-  runs = "pwd"
-}
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@master
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        version: 1.8
+    - name: Build with Maven
+      run: mvn package --file pom.xml
